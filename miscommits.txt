@@ -1,0 +1,11 @@
+commit ffe2811dd4633c8c81c003e2d6c08d2504fd45f8
+Author: CCDM15 <JulioMN.0102@gmail.com>
+Date:   Fri Sep 2 11:31:17 2016 -0600
+
+    Cambio en mi Readme.txt
+
+commit d3f5ca2dda174644096fc706ac4737c3bf2ca43b
+Author: CCDM15 <JulioMN.0102@gmail.com>
+Date:   Tue Aug 30 11:55:52 2016 -0600
+
+    Commit inicial con readme.txt
