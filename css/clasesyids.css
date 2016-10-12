@@ -1,0 +1,26 @@
+#PrimerUL
+{
+	display: inline-block;
+	background: red;
+	color: white; 
+}
+
+#SegundoUL
+{
+	display: inline-block;
+	background: gray;
+	color: orange;
+
+}
+
+.explota
+{
+	background: pink;
+	color: gray;
+}
+
+.Samsung
+{
+	background: blue;
+	color: white;
+}
