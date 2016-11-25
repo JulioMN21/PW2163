@@ -20,17 +20,17 @@
 	$consulta = "select * from usuarios order by usuario";
 	$resultado = mysql_query($consulta); //Ejecutando consulta
 	$tabla = "<table border=1";
-	$tabla = "<tr>";
-	$tabla = "<th>Usuario</th><th>Nombre</th><th>Clave</th><th>Tipo</th>"
-	$tabla = "</tr>"
+	$tabla.= "<tr>";
+	$tabla.= "<th>Usuario</th><th>Nombre</th><th>Clave</th><th>Tipo</th>"
+	$tabla.= "</tr>"
 	while ($registro = mysql_fetch_array($resultado)) 
 	{
-		$tabla = "<tr>";
-		$tabla = "<td>".$registro["usuario"]."</td>";
-		$tabla = "<td>".$registro["nombre"]."</td>";
-		$tabla = "<td>".$registro["clave"]."</td>";
-		$tabla = "<td>".$registro["tipo"]."</td>";
-		$tabla = "</tr>";
+		$tabla.= "<tr>";
+		$tabla.= "<td>".$registro["usuario"]."</td>";
+		$tabla.= "<td>".$registro["nombre"]."</td>";
+		$tabla.= "<td>".$registro["clave"]."</td>";
+		$tabla.= "<td>".$registro["tipo"]."</td>";
+		$tabla.= "</tr>";
 	}
 	$tabla.="</table>";
 	print $table;
