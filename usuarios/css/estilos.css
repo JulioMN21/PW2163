@@ -1,0 +1,35 @@
+body
+{
+	margin: 0 auto;
+	max-width: 1024px;
+}
+
+header	
+{
+	margin-bottom: 50px;
+	text-align: center; 
+}
+
+header img /*logo tec*/
+{
+	float: right;
+	margin-top: -60px;
+	width: 100px;
+}
+
+header nav
+{
+	display: none;
+}
+
+header nav ul li
+{
+	margin-right: 10px;
+	display: inline-block;
+}
+
+#entradaUsuario
+{
+	margin: 0 auto;
+	width: 350px;
+}
