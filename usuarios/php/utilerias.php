@@ -1,4 +1,5 @@
 <?php 
+
 	function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
   $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
@@ -28,10 +29,22 @@
 
 	function validaUsuario()
 	{
-		$u = GetSQLValueString ($_POST["usuario"],"text");
-		$c = GetSQLValueString ($_POST["clave",],"text");
-		$conexion = mysql_connect("localhost","root","");
-		$consulta = sprintf("select * from usuarios where usuario =$s and clave=$s",);
+    $respuesta = false;
+		$u = GetSQLValueString ($_POST["usuario"],"text"); //Limpieza
+		$c = GetSQLValueString ($_POST["clave",],"text"); //Limpieza
+    //Conexion al servidor
+		$conexion  = mysql_connect("localhost","root","");
+    //Conexion a la BD
+    mysql_select_db("bd2163");
+		$consulta  = sprintf("select * from usuarios where usuario =$s and clave=$s limit 1",$u,$c);
+    $resultado = mysql_query($consulta);
+    //Esperamos un solo resultado
+    if (mysql_num_rows($resultado) == 1) 
+    {
+      $respuesta = true;
+    }
+    $arregloJSON = array('respuesta' => respuesta);
+    print json_encode($arregloJSON);
 	}
 
 

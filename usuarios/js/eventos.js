@@ -10,7 +10,10 @@ var inicioUsuarios = function()
 						 "&usuario="+usuario+
 						 "&clave="+clave+
 						 "&id="+Math.random();
-		//Hacemos la peticion remota
+		//Validamos que no esten vacios
+		if (usuario!="" && clave!="") 
+		{
+			//Hacemos la peticion remota
 		$.ajax({
 			cache:false,
 			type:"POST",
@@ -19,14 +22,20 @@ var inicioUsuarios = function()
 			data:parametros,
 			success: function(response){
 				//Si todo sale bien
-			},
+				if (response.respuesta == true) 
+				{
+						$("#entradaUsuario").hide();
+						$("nav").show();
+				}
+					else
+					{
+						alert("Datos incorrectos :(");
+					}
+		},
 			error: function(xhr,ajaxOptions,thrownError){
 				//Si todo sale mal
-			}
-		});
-		//Validamos que no esten vacios
-		if (usuario!="" && clave!="") 
-		{
+				}
+			});
 
 		}
 		else
