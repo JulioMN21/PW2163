@@ -44,6 +44,16 @@ var inicioUsuarios = function()
 		}
 	}
 	$("#btnValidaUsuario").on("click", validaUsuario);
+	var teclaClave = function(tecla)
+	{
+		if (tecla.which == 13) //Tecla enter 
+		{
+			validaUsuario(); //Funcion que valida usuario
+		}
+	}
+	//Keypress: se ejecuta cada vez que presiono una 
+	//tecla sobre el input
+	$("txtClave").on("keypress",teclaClave);
 }
 
 //Evento Inicial
