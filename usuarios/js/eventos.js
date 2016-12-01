@@ -3,8 +3,8 @@ var inicioUsuarios = function()
 	var validaUsuario = function()
 	{
 		//Extraer los datos de los input en el HTML
-		var usuario = $("txtUsuario").val();
-		var clave 	= $("txtClave").val();
+		var usuario = $("#txtUsuario").val();
+		var clave 	= $("#txtClave").val();
 		//Preparar los parametros para AJAX
 		var parametros = "opcion=valida"+
 						 "&usuario="+usuario+
@@ -24,8 +24,8 @@ var inicioUsuarios = function()
 				//Si todo sale bien
 				if (response.respuesta == true) 
 				{
-						$("#entradaUsuario").hide();
-						$("nav").show();
+						$("#entradaUsuario").hide("slow");
+						$("nav").show("slow");
 				}
 					else
 					{
@@ -51,9 +51,16 @@ var inicioUsuarios = function()
 			validaUsuario(); //Funcion que valida usuario
 		}
 	}
+
+	var Alta = function()
+	{
+		$("#artAltaUsuarios").show("slow")
+	}
 	//Keypress: se ejecuta cada vez que presiono una 
 	//tecla sobre el input
-	$("txtClave").on("keypress",teclaClave);
+	$("#txtClave").on("keypress",teclaClave);
+	$("#btnAlta").on("click",Alta);
+	$("#btnGuardaUsuario").on("click",GuardaUsuario);
 }
 
 //Evento Inicial
