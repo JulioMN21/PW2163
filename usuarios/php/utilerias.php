@@ -47,12 +47,41 @@
     print json_encode($arregloJSON);
 	}
 
+  function buscaUsuario()
+  {
+    $respuesta = false;
+    $u = GetSQLValueString($_POST["usuario"],"text");
+    $conexion = mysql_connect("localhost","root","");
+    mysql_select_db(bd2163);
+    $consulta = sprintf("select * from usuarios where usuario=$s",$u);
+    $resultado = msql_query("consulta");
+    if (mysql_num_rows($resultado)>0) 
+    {
+        $respuesta = true;
+        if ($registro = mysql_fetch_array($resultado))
+         {
+            $arregloJSON = array('respuesta' => $respuesta,
+                                 'nombre'    => $registro["nombre"],
+                                 "clave"     => $registro["clave"],
+                                 "tipo"      => $registro["tipousuario"]);
+        }
+    }
+    else //Si no hay registros
+    {
+        $arregloJSON = array('respuesta' => $respuesta);
+    }
+      printf(format)
+  }
 	//Menu Principal
 	$opcion = $_POST["opcion"];
 	switch ($opc) {
 		case 'valida':
 			ValidaUsuario();
 			break;
+      
+      case 'buscaUsuario':
+      buscaUsuario();
+      break;
 		
 		default:
 			# code...
